@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+      <record model="ir.ui.view" id="clinic_form_view">
+            <field name="name">clinic.form</field>
+            <field name="model">clinic.menu</field>
+            <field name="arch" type="xml">
+                <form string=" Patient data">
+                    <sheet>
+                        <group>
+                            
+                            <field name="doctor_name"/>
+                            <field name="patient_name"/>
+                            <field name="dateof"/>
+                            <field name="phone"/>
+                            <field name="Type"/>
+                            <field name="city"/>                            
+                            <field name="role"/>
+                        </group>                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="clinic_tree_view">
+            <field name="name">clinic.tree</field>
+            <field name="model">clinic.menu</field>
+            <field name="arch" type="xml">
+                <tree string="Patients data">
+                    <field name="patient_name"/>
+                    <field name="dateof"/>
+                    <field name="phone"/>
+                    
+                    <field name="role"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="clinic_search_view">
+            <field name="name">clinic.search</field>
+            <field name="model">clinic.menu</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="patient_name"/>
+                    <field name="Type"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="clinic_list_action">
+            <field name="name">Patients</field>
+            <field name="res_model">clinic.menu</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">حجز كشف او اعاده لاول مريض</p>
+            </field>
+        </record>
+
+
+
+
+        <menuitem id="main_clinic_menu" name="عياده النساء والتوليد "/>
+
+        <menuitem id="side_clinic_menu" name="عياده النساء والتوليد " 
+                  parent="main_clinic_menu"/>
+
+        <menuitem id="clinic_menu" name="قائمه المرضي " parent="side_clinic_menu"
+                  action="clinic_list_action"/>
+
+    
+  </data>
+</odoo>
