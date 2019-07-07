@@ -1,0 +1,113 @@
+<odoo>
+    <data>
+        <report
+                id="report_clinic_menu_action"
+                model="clinic.menu"
+                string="Clinic Report"
+                report_type="qweb-pdf"
+                file="clinic.report_temp_clinic_report_pdf"
+                name="clinic.report_temp_clinic_report_pdf"
+        />
+
+        <template id="report_temp_clinic_report_pdf">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.internal_layout">
+                        <div class="page">
+                            <style>
+                                .tg {border-collapse:collapse;border-spacing:0;border-color:#999;}
+                                .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px
+                                5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+                                .tg th{fon•••••t-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px
+                                5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#333;}
+                                .tg .tg-1d7g{font-weight:bold;font-size:16px;vertical-align:top}
+                                .tg .tg-p96l{font-weight:bold;font-size:15px;vertical-align:top}
+                                .tg .tg-d55q{font-weight:bold;font-size:14px;vertical-align:top}
+                                .tg .tg-28r4{font-size:13px;vertical-align:top}
+                                .tg .tg-3zav{font-size:13px}
+                                .tg .tg-wm6t{font-weight:bold;font-size:16px}
+                                .tg .tg-07dj{font-weight:bold;font-size:14px}
+
+                            </style>
+                            <br/><br/><br/>
+                                <h2 style="text-align:center;">
+                                    <strong>
+                                         Clinic Report
+                                    </strong>
+                                </h2>
+                              <br/><br/>
+
+                            <table border="0" cellpadding="50">
+                                <tr>
+                                    <th style="text-align: left;padding: 1px;" width="17%">Clinic For Borning</th>
+                                    <th width="4%" style="padding: 1px;">:</th>
+                                    <th width="44%" style="text-align: left;">
+                                        <span style="font-size:16px;" t-field="o.name"/>
+                                    </th>
+
+                                    <th style="text-align: right;padding: 1px;" width="17%">Doctor</th>
+                                    <th width="4%" style="padding: 1px;">:</th>
+                                    <th width="39%" style="text-align: left;">
+                                        <span style="font-size:14px;" t-field="o.doctor_name.name"/>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th style="text-align: left;padding: 1px;" width="17%">Patient Name</th>
+                                    <th width="4%" style="padding:1px;">:</th>
+                                    <th width="44%" style="text-align: left;">
+                                        <span style="font-size:14px;" t-field="o.patient_name.name"/>
+                                    </th>
+
+
+                                    <th style="text-align: right;padding:1px;" width="17%">Phone Number</th>
+                                    <th width="4%" style="padding:1px;">:</th>
+                                    <th width="60%" style="text-align: left;">
+                                        <span style="font-size:14px;" t-field="o.phone"/>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th style="text-align: left;padding: 1px;" width="17%">New / Backing</th>
+                                    <th width="4%" style="padding: 1px;">:</th>
+                                    <th width="44%" style="text-align: left;">
+                                        <span style="font-size:14px;" t-field="o.Type"/>
+                                    </th>
+                                    <th style="text-align: right;padding:1px;" width="17%">Date</th>
+                                    <th width="4%" style="padding:1px;">:</th>
+                                    <th width="60%" style="text-align: left;">
+                                        <span style="font-size:14px;" t-field="o.dateof" t-field-options='{"format":"dd/MM/yyyy"}'/>
+                                    </th>
+                                </tr>
+
+                                <tr>
+                                    <th style="text-align: left;padding: 1px;" width="17%">City</th>
+                                    <th width="4%" style="padding:1px;">:</th>
+                                    <th width="44%" style="text-align: left;">
+                                        <span style="font-size:14px;" t-field="o.city"/>
+                                    </th>
+
+
+                                    <th style="text-align: right;padding:1px;" width="17%">Role</th>
+                                    <th width="4%" style="padding:1px;">:</th>
+                                    <th width="60%" style="text-align: left;">
+                                        <span style="font-size:14px;" t-field="o.role"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left;padding: 1px;" width="17%">have / Not have</th>
+                                    <th width="4%" style="padding:1px;">:</th>
+                                    <th width="44%" style="text-align: left;">
+                                        <span style="font-size:14px;" t-field="o.Typeofill"/>
+                                    </th>
+                                </tr>
+
+                            </table>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
